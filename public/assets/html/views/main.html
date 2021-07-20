@@ -1,0 +1,49 @@
+<% var data = {
+  title: "Заголовок | Проект",
+  author: "Harrix",
+}; %>
+<%= _.template(require('./../includes/header.html'))(data) %>
+
+<section class="banner"
+>
+  <div>
+    <div class="banner-box" >
+        <img src="../../img/banner-red.jpg" alt="banner"/>
+        <div class="banner-box_slogan">
+            <p>выбирай <br/> лучшее вино</p>
+            <span>
+                Мировой рейтинг основанный на более чем 20,000,000 <br/> живых отзывов.
+            </span>
+
+        </div>
+
+    </div>
+  </div>
+</section>
+<section class="filter">
+	<div>
+		<div class="filter-vine">
+			<div class="filter-vine_type">
+                <% var data = { classType: "vertical", title: "" }; %>
+                <%= _.template(require('./../includes/snippets/select.html'))(data) %>
+            </div>
+            <div class="filter-vine_price">
+                <% var data = { title: "Price Range", min: "3000", max: "8000", step: 100, sighn: '₽' }; %>
+                <%= _.template(require('./../includes/snippets/slider.html'))(data) %>
+            </div>
+            <div class="filter-vine_rating">
+                <% var data = { title: "Rating", min: "3.5", max: "5", step: .5, sighn: ''}; %>
+                <%= _.template(require('./../includes/snippets/slider.html'))(data) %>
+            </div>
+            <div class="filter-vine_show">
+                <button>Show wines</button>
+            </div>
+		</div>
+	</div>
+</section>
+
+<%= _.template(require('./../includes/snippets/top-list.html'))() %>
+
+<%= _.template(require('./../includes/footer.html'))(data) %>
+
+

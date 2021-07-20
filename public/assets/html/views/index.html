@@ -1,0 +1,26 @@
+<% var data = {
+title: "Заголовок | Проект",
+author: "Harrix",
+}; %>
+<%= _.template(require('./../includes/header.html'))(data) %>
+
+
+
+<section class="toc">
+    <div>
+        <div> <!--row-->
+            <div class="toc-menu">
+                <div class="toc-item"><a href="javascript:">index</a></div>
+                <div class="toc-item"><a href="javascript:">catalog</a></div>
+                <div class="toc-item"><a href="javascript:">card</a></div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<%= _.template(require('./../includes/snippets/top-list.html'))() %>
+
+<%= _.template(require('./../includes/footer.html'))(data) %>

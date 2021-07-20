@@ -1,0 +1,33 @@
+<div class="price-slider">
+
+    <div class="price-slider_title">
+        <span><%=title%></span>
+    </div>
+
+    <div class="price-slider_digits">
+        <div class="price-slider_digitLeft">
+        <span><em><%=min%></em>
+            <%=sighn%></span>
+
+            <input type="hidden" value="<%=min%>"/>
+        </div>
+        <div class="price-slider_digitRight">
+            <span><em><%=max%></em>
+                <%=sighn%></span>
+            <input type="hidden" value="<%=max%>"/>
+        </div>
+    </div>
+
+    <label class="rangeSlider">
+        <input type="range"
+               class="priceslider vine-price"
+                step="<%=step%>"
+               multiple
+               value="<%=min%>,<%=max%>" min="0" max="<%=max%>"
+        />
+    </label>
+
+</div>
+
+
+

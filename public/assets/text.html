@@ -1,0 +1,26 @@
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'vivino.price' in 'where clause'
+
+(SQL:
+select count(*) as aggregate from `products`
+
+    left join  `vivino` on  `products`.`id` = `vivino`.`product_id`
+    left join `prop_colors` on `products`.`color_id` = `prop_colors`.`id`
+    left join `prop_brands` on `products`.`brand_id` = `prop_brands`.`id`
+    left join `prop_countries` on `products`.`country_id` = `prop_countries`.`id`
+    left join `prop_regions` on `products`.`region_id` = `prop_regions`.`id`
+    left join `prop_sub_regions` on `products`.`sub_region_id` = `prop_sub_regions`.`id`
+    left join `prop_manufacturers` on `products`.`manufacturer_id` = `prop_manufacturers`.`id`
+    left join `vivino_reviews` on `vivino`.`review_id` = `vivino_reviews`.`id`
+    left join `vivino_users` on `vivino`.`review_user_id` = `vivino_users`.`vivino_id`
+
+where  `vivino`.`price` between 1000 and 5000
+    and `vivino`.`ratings_average` between 3.5 and 5
+    and `prop_colors`.`id` in (1))
+
+
+http://localhost/phpmyadmin/db_import.php?db=vivino_re&token=7ab0afbd956e39f9c668a4fc4900a07c&timeout_passed=1&offset=80140279
+http://localhost/phpmyadmin/db_import.php?db=vivino_re&token=7ab0afbd956e39f9c668a4fc4900a07c&timeout_passed=1&offset=82219207
+http://localhost/phpmyadmin/db_import.php?db=vivino_re&token=7ab0afbd956e39f9c668a4fc4900a07c&timeout_passed=1&offset=84110079
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'vivino.ratings_count' in 'field list' (SQL: select `products`.`id` as `product_id`, `products`.`slug` as `product_slug`, `products`.`name` as `product_name`, `products`.`translit` as `product_translit`, `vivino`.`id` as `vivino_id`, `vivino`.`price` as `price`, `vivino`.`ratings_average` as `ratings_average`, `vivino`.`ratings_count` as `ratings_count`, `vivino`.`reviews_count` as `reviews_count`, `vivino`.`review_id` as `review_id`, `vivino`.`review_user_id` as `review_user_id`, `vivino_reviews`.`note` as `review_note`, `vivino_reviews`.`note_ru` as `review_note_ru`, `vivino_reviews`.`rating` as `review_rating`, `vivino_users`.`alias` as `alias`, `vivino_users`.`avatar` as `avatar`, `prop_colors`.`name_ru` as `color_name_ru`, `prop_colors`.`url` as `color_url`, `prop_brands`.`name` as `brand_name`, `prop_brands`.`url` as `brand_url`, `prop_countries`.`id` as `country_id`, `prop_countries`.`name_ru` as `country_name_ru`, `prop_countries`.`name_en` as `country_name_en`, `prop_countries`.`url` as `country_url`, `prop_regions`.`id` as `region_id`, `prop_regions`.`name_ru` as `region_name_ru`, `prop_regions`.`name_en` as `region_name_en`, `prop_regions`.`url` as `region_url`, `prop_sub_regions`.`id` as `sub_region_id`, `prop_sub_regions`.`name_ru` as `sub_region_name_ru`, `prop_sub_regions`.`name_en` as `sub_region_name_en`, `prop_sub_regions`.`url` as `sub_region_url`, `prop_manufacturers`.`id` as `winery_id`, `prop_manufacturers`.`name` as `winery_name`, `prop_manufacturers`.`url` as `winery_url` from `products` left join `vivino` on `products`.`id` = `vivino`.`product_id` left join `prop_colors` on `products`.`color_id` = `prop_colors`.`id` left join `prop_brands` on `products`.`brand_id` = `prop_brands`.`id` left join `prop_countries` on `products`.`country_id` = `prop_countries`.`id` left join `prop_regions` on `products`.`region_id` = `prop_regions`.`id` left join `prop_sub_regions` on `products`.`sub_region_id` = `prop_sub_regions`.`id` left join `prop_manufacturers` on `products`.`manufacturer_id` = `prop_manufacturers`.`id` left join `vivino_reviews` on `vivino`.`review_id` = `vivino_reviews`.`id` left join `vivino_users` on `vivino`.`review_user_id` = `vivino_users`.`vivino_id` limit 12 offset 0)

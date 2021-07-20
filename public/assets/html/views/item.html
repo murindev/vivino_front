@@ -1,0 +1,277 @@
+<% var data = {
+  title: "Заголовок | Проект",
+  author: "Harrix",
+}; %>
+<%= _.template(require('./../includes/header.html'))(data) %>
+
+
+<section class="itemCard">
+    <div>
+
+        <div class="itemCard-main">
+            <div class="itemCard-main_item">
+                <div class="itemImage">
+                    <img src="../../img/bottle-card.png" alt="Trumpeter Malbec N.V."/>
+                </div>
+                <div class="itemDesc">
+                    <h3 class="itemDesc-vinery"><a href="javascript:">Rutini</a></h3>
+                    <h1 class="itemDesc-name"> Trumpeter Malbec N.V.</h1>
+                    <h2 class="itemDesc-prop">
+                        <span class="itemDesc-prop_flag">
+                            <img src="../../img/flag_ar.svg" alt="flag"/>
+                        </span>
+                        <span class="itemDesc-prop_type">Red wine</span>
+                        <span class="itemDesc-prop_from">from</span>
+                        <a href="javascript:" class="itemDesc-prop_region">Mendoza</a>
+                        <a href="javascript:" class="itemDesc-prop_dot">·</a>
+                        <a href="javascript:" class="itemDesc-prop_country">Argentina</a>
+                    </h2>
+
+                    <div class="itemDesc-rating">
+
+                        <span class="itemDesc-rating_rate">3.7</span>
+                        <b class="itemDesc-rating_rating">
+                            <i class="star red sz-18"></i>
+                            <i class="star red sz-18"></i>
+                            <i class="star red sz-18"></i>
+                            <i class="star red sz-18"></i>
+                            <i class="star red_5 sz-18"></i>
+                        </b>
+                        <span class="itemDesc-rating_ratings">31492 ratings</span>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="itemCard-main_sell">
+
+                <div class="itemCard-main_sellAvailability">
+                    <span>Vivino doesn’t sell this wine.</span>
+                    <p>We did find it available on other online shops at an average purchase price of 1020₽.</p>
+                    <a href="javascript:" rel="seller">Show all buying options</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="itemTaste">
+    <div>
+        <div class="itemTaste-row">
+            <div class="itemTaste-head">
+                <h2>What does this wine taste like?</h2>
+            </div>
+
+
+
+            <div class="itemTaste-taste">
+                <div class="taste-table">
+                    <% var taste = [
+                    { min: 'Light', max: 'Bold', width: 15, left: 24 },
+                    { min: 'Smooth', max: 'Tannic', width: 15, left: 59 },
+                    { min: 'Dry', max: 'Sweet', width: 15, left: 41 },
+                    { min: 'Soft', max: 'Acidic', width: 15, left: 70 },
+                    ] %>
+
+                    <% taste.forEach(function(item) { %>
+                    <div class="taste-table_row">
+                        <div class="taste-table_col">
+                            <span><%=item.min%></span>
+                        </div>
+                        <div class="taste-table_col">
+                            <div class="taste-table_slider">
+                                <div class="taste-table_thumb" style='width: <%=item.width%>%; left:<%=item.left%>%;'></div>
+                            </div>
+                        </div>
+                        <div class="taste-table_col">
+                            <span><%=item.max%></span>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+
+            </div>
+            <div class="itemTaste-summary">
+                <span> WINE LOVERS TASTE SUMMARY</span>
+                <p>The taste profile of Rutini Trumpeter Malbec N.V. is based on 1986 user reviews</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="flavours">
+    <div>
+        <div class="flavours-row">
+            <div class="flavours-head">
+                <h2>FLAVORS PEOPLE MENTION IN REVIEWS</h2>
+            </div>
+            <div class="flavours-wrapper">
+                <div class="flavours-list">
+                    <ul class="flavours-items is-set">
+
+                        <li class="flavours-item  is-ref ">
+                            <a href="javascript:">
+                                <div class="flavours-item_header" style="background: rgb(195, 131, 73);">
+                                    <img src="../../img/i-flavor.svg" alt="icon"/>
+                                </div>
+
+                                <div class="flavours-item_footer">
+                                    <span>raisin, fig, prune</span>
+                                    <p>153 <em style="color: rgb(195, 131, 73);">dried fruit</em> notes</p>
+                                </div>
+                            </a>
+
+                        </li>
+                        <% var taste = [ 'rgb(185, 101, 93)','rgb(158, 110, 64)','rgb(140, 84, 51)','rgb(185, 101, 93)','rgb(158, 110, 64)','rgb(140, 84, 51)','rgb(185, 101, 93)','rgb(158, 110, 64)','rgb(140, 84, 51)' ] %>
+
+                        <% taste.forEach(function(item) { %>
+
+                        <li class="flavours-item">
+                            <a href="javascript:">
+                                <div class="flavours-item_header" style="background: <%=item%>;">
+                                    <img src="../../img/i-flavor.svg" alt="icon"/>
+                                </div>
+
+                                <div class="flavours-item_footer">
+                                    <span>raisin, fig, prune</span>
+                                    <p>153 <em style="color: <%=item%>;">dried fruit</em> notes</p>
+                                </div>
+                            </a>
+
+                        </li>
+
+                        <% }); %>
+
+                    </ul>
+
+                </div>
+
+                <button class="flavours-toggle"></button>
+                <button class="flavours-toggle" data-toggle="next"></button>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<section class="itemReviews">
+    <div>
+        <div class="itemReviews-row">
+            <div class="itemReviews-head">
+                <h2>Community reviews</h2>
+            </div>
+            <div class="itemReviews-items">
+                <% for (var i=1; i<=3; i++) { %>
+                <div class="itemReviews-item">
+                    <div class="itemReviews-item_header">
+                        <div class="itemReviews-item_headerUser">
+                            <img src="../../img/user-item.jpg" alt="avatar"/>
+
+                        </div>
+                        <div class="itemReviews-item_headerRating">
+                            <b>
+                                <i class="star red sz-18"></i>
+                                <i class="star red sz-18"></i>
+                                <i class="star red sz-18"></i>
+                                <i class="star red sz-18"></i>
+                                <i class="star red_5 sz-18"></i>
+                            </b>
+                            <p>Joy Noel</p>
+                            <span>22 Mar 2017</span>
+                        </div>
+                    </div>
+                    <div class="itemReviews-item_footer">
+                        <p>Very friendly .. good with a dollar sándwich. Fruity .. berries</p>
+                    </div>
+
+                </div>
+                <% } %>
+
+
+
+            </div>
+            <div class="itemReviews-more">
+                <a href="javascript:">Show more reviews</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="itemStyle">
+    <div>
+        <div>
+            <div class="itemStyle-info">
+                <div class="itemStyle-info_title">
+                    Wine style
+                </div>
+                <div class="itemStyle-info_name">Argentinian Malbec</div>
+                <div class="itemStyle-info_country">
+                    <span>
+                        <img src="../../img/flag_ar.svg" alt="flag"/>
+                    </span>
+                    Argentina
+                </div>
+                <p>
+                    Extremely popular, Argentinian Malbec is an inky, medium-bodied, dry red wine with strong impressions of dark fruits on the nose and palate. This wine tends to have mellower tannins than its French counterpart. Heavily dependent on where they are grown for variations in flavor, Argentinian Malbec has quickly become a world favorite due to the characteristics that the high altitude climate and soi...
+                </p>
+                <div class="itemStyle-info_more">
+                    <a href="javascript:">Read more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="summary">
+    <div>
+        <div>
+            <div class="summary-head">Summary</div>
+            <div class="summary-col">
+                <div class="summary-item">
+                    <span>Winery</span>
+                    <a href="javascript:">Rutini</a>
+                </div>
+                <div class="summary-item">
+                    <span>Grapes</span>
+                    <a href="javascript:">Malbec</a>
+                </div>
+                <div class="summary-item">
+                    <span>Region</span>
+                    <a href="javascript:">Mendoza</a>
+                </div>
+
+            </div>
+            <div class="summary-col">
+                <div class="summary-item">
+                    <span>Wine style</span>
+                    <a href="javascript:">Argentinian Malbec</a>
+                </div>
+                <div class="summary-item">
+                    <span>Food pairing</span>
+                    <a href="javascript:">Beef, Lamb, Poultry</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!--<style>
+  footer {
+    display: none;
+  }
+</style>-->
+<%= _.template(require('./../includes/snippets/top-list.html'))() %>
+
+<%= _.template(require('./../includes/footer.html'))(data) %>
+
+
